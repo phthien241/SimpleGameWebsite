@@ -1,0 +1,30 @@
+.hero {
+    background: url('../../background.jpg') no-repeat center center;
+    font-family: 'Comic Neue', cursive;
+    height: 100vh;
+}
+.heading{
+    letter-spacing: 1rem;
+}
+.sub-heading{
+    letter-spacing: 0.5rem;
+}
+.intro{
+    font-family: 'Comic Neue', cursive;
+    font-weight:600
+}
+.story{
+    height: 45rem;
+    &-heading{
+        font-size: 4rem;
+        font-family: 'Comic Neue', cursive;
+        font-weight: bold;
+        width: fit-content;
+        margin: 0 auto;
+    }
+    p{
+        font-family: 'Comic Neue', cursive;
+        font-weight: 600;
+    }
+}
+
