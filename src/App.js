@@ -4,6 +4,9 @@ import { BrowserRouter as Router,  Routes,  Route } from "react-router-dom";
 const HomePage = lazy(()=>import('./components/HomePage/HomePage'))
 const SignIn = lazy(()=>import('./components/Sign-In/SignIn'))
 const Profile = lazy(()=>import('./components/Profile/Profile'))
+const Social = lazy(()=>import('./components/Social/Social'))
+const GameList = lazy(()=>import('./components/GameList/GameList'))
+
 function App() {
   return (
     <Router>
@@ -12,6 +15,8 @@ function App() {
           <Route exact path="/" element = {<HomePage/>}></Route>
           <Route exact path="sign-in" element = {<SignIn/>}></Route>
           <Route exact path="profile" element={<Profile/>}></Route>
+          <Route exact path='social' element={<Social/>}></Route>
+          <Route exact path ='game-list' element={<GameList/>}></Route>
         </Routes>
       </Suspense>
     </Router>

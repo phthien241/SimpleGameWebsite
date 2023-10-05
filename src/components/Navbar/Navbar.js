@@ -20,9 +20,7 @@ function Navbar() {
             </a>
           </li>
           <li className="mr-5">
-            <a href="#contact" className="text-black">
-              Contact
-            </a>
+            <Link className="text-lg font-semibold" to="/social">Social</Link>
           </li>
         </ul>
         <Link className="text-lg font-semibold" to="/sign-in">Sign In</Link> 
