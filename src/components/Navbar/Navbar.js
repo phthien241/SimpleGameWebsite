@@ -10,14 +10,10 @@ function Navbar() {
         <img src={logo} alt="logo" className="w-30 h-24"></img>
         <ul className="navbar flex text-lg font-semibold">
           <li className="mr-5">
-            <a href="#home" className="text-black">
-              Home
-            </a>
+          <Link className="text-lg font-semibold" to="/">Home</Link> 
           </li>
           <li className="mr-5">
-            <a href="#games" className="text-black">
-              Games
-            </a>
+            <Link className="text-lg font-semibold" to="/game-list">Game</Link>
           </li>
           <li className="mr-5">
             <Link className="text-lg font-semibold" to="/social">Social</Link>

@@ -2,14 +2,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const userRoutes = require("./routes/user")
 
 const app = express();
-mongoose.connect("MongoDB URL")
+mongoose.connect("mongodb+srv://kurrwin1:Thapdienmaiphuc241!@cluster0.uqwplwt.mongodb.net/game?retryWrites=true&w=majority")
 .then(()=>console.log("Connect to database"))
-.catch(()=>console.log("Connection failed"));
+.catch((err)=>console.log(err));
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+app.use("/api/users",userRoutes)
 
 module.exports = app

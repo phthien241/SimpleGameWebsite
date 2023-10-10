@@ -8,7 +8,7 @@ function GameList() {
       <div class="container">
         <div>
           <div class="game-list">
-            <img src={pong} alt="" />
+            <img className="rounded-2xl" src={pong} alt="" />
             <div class="relative country-description w-full">
               <a>Name</a>
               <div class="country-description-sub">Game</div>

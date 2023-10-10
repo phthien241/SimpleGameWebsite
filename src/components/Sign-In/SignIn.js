@@ -1,6 +1,8 @@
 import React from "react";
 import "./SignIn.scss";
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/logo.png";
+import { Link } from "react-router-dom";
+
 function SignIn() {
   return (
     <>
@@ -78,6 +80,21 @@ function SignIn() {
                 </div>
               </form>
             </div>
+            <p class="mt-10 text-center text-sm text-gray-500">
+              Not a member?
+              {/* <a
+                href="#"
+                class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 ml-2"
+              >
+                Sign Up
+              </a> */}
+              <Link
+                to="/sign-up"
+                className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 ml-2"
+              >
+                Sign Up
+              </Link>
+            </p>
           </div>
         </div>
       </div>
