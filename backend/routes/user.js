@@ -7,21 +7,31 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "kurrwin2@gmail.com",
-    pass: "rrambytqiuwacsmp",
+    pass: "sofsnxhsfourqgzm",
   },
+});
+
+router.post("/sign-in", (req, res) => {
+  User.findOne({ email: req.body.email, password: req.body.password })
+    .then((response) => {
+      res.status(200).send({ message: "Sign in successfully" });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 router.post("/sign-up", (req, res) => {
   new User(req.body)
     .save()
     .then(() => {
-    //   const mailOptions = {
-    //     from: "kurrwin2@gmail.com",
-    //     to: req.body.email,
-    //     subject: "Welcome to Game Craftery",
-    //     text: `Hi ${req.body.fname}, Thank you for signing up, enjoy our games`,
-    //   };
-    //   transporter.sendMail(mailOptions);
+      const mailOptions = {
+        from: "kurrwin2@gmail.com",
+        to: req.body.email,
+        subject: "Welcome to Game Craftery",
+        text: `Hi ${req.body.fname}, Thank you for signing up, enjoy our games`,
+      };
+      transporter.sendMail(mailOptions);
       res.status(200).send({ message: "Sign up successfully" });
     })
     .catch((err) => {

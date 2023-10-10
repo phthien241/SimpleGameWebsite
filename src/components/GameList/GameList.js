@@ -1,14 +1,16 @@
 import React from "react";
 import "./GameList.scss";
 import pong from "./../../assets/images/pong.jpg";
+import Navbar from "../Navbar/Navbar";
 
 function GameList() {
   return (
     <>
+    <Navbar></Navbar>
       <div class="container">
         <div>
           <div class="game-list">
-            <img className="rounded-2xl" src={pong} alt="" />
+            <img className="game-img rounded-2xl" src={pong} alt="" />
             <div class="relative country-description w-full">
               <a>Name</a>
               <div class="country-description-sub">Game</div>

@@ -1,9 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignIn.scss";
 import logo from "../../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDialog } from "../../Contexts/DialogProvider";
 
 function SignIn() {
+  const navigate = useNavigate();
+  const {open, setOpen} = useDialog();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setOpen(true);
+    axios
+      .post(`${process.env.REACT_APP_BASE_URL}/users/sign-in`, formData)
+      .then((response) => {
+        setOpen(false);
+        navigate('/');
+        console.log(response.message);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div className="signin h-screen flex justify-center align-items">
@@ -21,7 +54,7 @@ function SignIn() {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-              <form className="space-y-6" action="#" method="POST">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <label
                     htmlFor="email"
@@ -35,6 +68,7 @@ function SignIn() {
                       name="email"
                       type="email"
                       autoComplete="email"
+                      onChange={handleInputChange}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -64,6 +98,7 @@ function SignIn() {
                       name="password"
                       type="password"
                       autoComplete="current-password"
+                      onChange={handleInputChange}
                       required
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -82,12 +117,6 @@ function SignIn() {
             </div>
             <p class="mt-10 text-center text-sm text-gray-500">
               Not a member?
-              {/* <a
-                href="#"
-                class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 ml-2"
-              >
-                Sign Up
-              </a> */}
               <Link
                 to="/sign-up"
                 className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 ml-2"

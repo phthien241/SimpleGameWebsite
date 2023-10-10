@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "../Sign-In/SignIn.scss";
 import logo from "../../assets/images/logo.png";
 import axios from "axios";
+import {useNavigate} from 'react-router-dom'
 import { DialogProvider, useDialog } from "../../Contexts/DialogProvider";
 
 function SignUp() {
+  const navigate = useNavigate();
   const {open, setOpen } = useDialog();
   const [formData, setFormData] = useState({
     fname: "",
@@ -21,6 +23,7 @@ function SignUp() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setOpen(true);
     axios
       .post(`${process.env.REACT_APP_BASE_URL}/users/sign-up`, formData)
       .then(() => {
@@ -30,6 +33,8 @@ function SignUp() {
           email: "",
           password: "",
         });
+        navigate('/')
+        setOpen(false);
         console.log("Sign-up successfully");
       })
       .catch((err) => {
@@ -38,7 +43,6 @@ function SignUp() {
   };
   return (
     <>
-      {/* <DialogProvider> */}
         <div className="signin h-screen flex justify-center align-items">
           <div className="wrap-signin my-20 bg-white bg-opacity-90 rounded-lg">
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8">
@@ -160,8 +164,7 @@ function SignUp() {
           Loading...
         </span>
       </div> */}
-        <button onClick={setOpen(true)}>Click</button>
-      {/* </DialogProvider> */}
+        {/* <button onClick={()=>setOpen(true)}>Click</button> */}
     </>
   );
 }

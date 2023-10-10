@@ -3,10 +3,12 @@ import "./Navbar.scss";
 import logo from '../../assets/images/logo.png'
 import { Link } from "react-router-dom";
 
-function Navbar() {
+
+const Navbar=()=> {
+  
   return (
     <>
-      <nav className="w-full flex items-center justify-between px-12">
+      <nav className={`w-full flex items-center justify-between px-12 sticky top-0 z-50`}>
         <img src={logo} alt="logo" className="w-30 h-24"></img>
         <ul className="navbar flex text-lg font-semibold">
           <li className="mr-5">
