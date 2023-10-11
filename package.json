@@ -14,6 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "moment": "^2.29.4",
     "mongodb": "^6.1.0",
     "mongoose": "^7.6.0",
     "nodemailer": "^6.9.5",
@@ -27,7 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"node server.js\" \"npm run client\"",
+    "client": "react-scripts start",
+    "server": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^8.2.1",
     "tailwindcss": "^3.3.3"
   }
 }

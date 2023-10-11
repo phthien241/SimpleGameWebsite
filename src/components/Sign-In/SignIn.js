@@ -7,7 +7,7 @@ import { useDialog } from "../../Contexts/DialogProvider";
 
 function SignIn() {
   const navigate = useNavigate();
-  const {open, setOpen} = useDialog();
+  const { open, setOpen } = useDialog();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -29,8 +29,10 @@ function SignIn() {
       .post(`${process.env.REACT_APP_BASE_URL}/users/sign-in`, formData)
       .then((response) => {
         setOpen(false);
-        navigate('/');
-        console.log(response.message);
+        localStorage.setItem("email", formData.email);
+        localStorage.setItem("fname",response.data.fname)
+        localStorage.setItem("lname",response.data.lname)
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
@@ -41,7 +43,7 @@ function SignIn() {
     <>
       <div className="signin h-screen flex justify-center align-items">
         <div className="wrap-signin my-20 bg-white bg-opacity-90 rounded-lg">
-          <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-20 lg:px-8">
+          <div className="flex min-h-full flex-1 flex-col justify-center px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
               <img
                 className="mx-auto h-24 w-auto"
@@ -122,6 +124,15 @@ function SignIn() {
                 className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 ml-2"
               >
                 Sign Up
+              </Link>
+            </p>
+            <p class="mt-4 text-center text-sm text-gray-500">
+              Return to
+              <Link
+                to="/"
+                className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 ml-2"
+              >
+                HomePage
               </Link>
             </p>
           </div>

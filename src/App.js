@@ -42,7 +42,6 @@ function App() {
           <Route exact path="game-list" element={<GameList />}></Route>
         </Routes>
       </Suspense>
-      {/* <DialogProvider><Dialog/></DialogProvider> */}
     </Router>
   );
 }

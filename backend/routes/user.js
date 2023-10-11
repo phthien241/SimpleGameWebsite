@@ -14,7 +14,8 @@ const transporter = nodemailer.createTransport({
 router.post("/sign-in", (req, res) => {
   User.findOne({ email: req.body.email, password: req.body.password })
     .then((response) => {
-      res.status(200).send({ message: "Sign in successfully" });
+      console.log(response);
+      res.status(200).send(response);
     })
     .catch((err) => {
       console.log(err);
