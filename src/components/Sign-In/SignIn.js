@@ -32,6 +32,7 @@ function SignIn() {
         localStorage.setItem("email", formData.email);
         localStorage.setItem("fname",response.data.fname)
         localStorage.setItem("lname",response.data.lname)
+        localStorage.setItem("bestScore",response.data.bestScore)
         navigate("/");
       })
       .catch((err) => {

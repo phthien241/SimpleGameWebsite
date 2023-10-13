@@ -40,4 +40,17 @@ router.post("/sign-up", (req, res) => {
     });
 });
 
+router.post("/update-score", (req, res) => {
+  User.findOneAndUpdate(
+    { email: req.body.email },
+    { bestScore: req.body.bestScore }
+  )
+    .then((response) => {
+      res.status(200).send(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 module.exports = router;

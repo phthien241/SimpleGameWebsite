@@ -39,7 +39,7 @@ function App() {
             }
           ></Route>
           <Route exact path="profile" element={<Profile />}></Route>
-          <Route exact path="phaser" element={<PhaserGame />}></Route>
+          <Route exact path="flappy-bird" element={<PhaserGame />}></Route>
           <Route exact path="social" element={<Social />}></Route>
           <Route exact path="game-list" element={<GameList />}></Route>
         </Routes>

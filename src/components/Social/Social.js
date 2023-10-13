@@ -66,7 +66,7 @@ function Social() {
   return (
     <>
       <Navbar></Navbar>
-      <div class="grid grid-cols-4 gap-4 mt-8">
+      <div className="grid grid-cols-4 gap-4 mt-8">
         <div className="col-span-1 relative">
           <div className="sticky top-0">
             <div className="p-4 hover:bg-gray-200 cursor-pointer">Home</div>
@@ -76,38 +76,38 @@ function Social() {
             <div className="p-4 hover:bg-gray-200 cursor-pointer">LogOut</div>
           </div>
         </div>
-        <div class="social-newfeed col-span-2 p-4">
+        <div className="social-newfeed col-span-2 p-4">
           <div>
             {newfeeds.slice().reverse().map((newfeed, index) => (
               <div key={index}>
-                <div class="max-w-xl mx-auto mb-10 p-4 bg-white rounded-lg shadow-md">
-                  <div class="flex items-center space-x-4">
+                <div className="max-w-xl mx-auto mb-10 p-4 bg-white rounded-lg shadow-md">
+                  <div className="flex items-center space-x-4">
                     <img
-                      class="h-12 w-12 rounded-full"
+                      className="h-12 w-12 rounded-full"
                       src={user_ava}
                       alt="Profile"
                     />
                     <div>
-                      <h3 class="font-semibold text-lg">
+                      <h3 className="font-semibold text-lg">
                         {newfeed.fname} {newfeed.lname}
                       </h3>
-                      <p class="text-gray-500 text-sm">{newfeed.createdAt}</p>
+                      <p className="text-gray-500 text-sm">{newfeed.createdAt}</p>
                     </div>
                   </div>
-                  <div class="mt-3 text-gray-700">{newfeed.content}</div>
-                  <div class="mt-4 flex justify-between">
-                    <button class="text-blue-500 hover:underline">Like</button>
-                    <button class="text-blue-500 hover:underline">
+                  <div className="mt-3 text-gray-700">{newfeed.content}</div>
+                  <div className="mt-4 flex justify-between">
+                    <button className="text-blue-500 hover:underline">Like</button>
+                    <button className="text-blue-500 hover:underline">
                       Comment
                     </button>
-                    <button class="text-blue-500 hover:underline">Share</button>
+                    <button className="text-blue-500 hover:underline">Share</button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div class="col-span-1">
+        <div className="col-span-1">
           <div className="wrap-input mx-auto sticky top-0">
             <form onSubmit={handleSubmitNewfeed}>
               <textarea

@@ -13,6 +13,7 @@ function SignUp() {
     lname: "",
     email: "",
     password: "",
+    bestScore: 0
   });
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,6 +33,7 @@ function SignUp() {
           lname: "",
           email: "",
           password: "",
+          bestScore:0
         });
         navigate('/')
         setOpen(false);

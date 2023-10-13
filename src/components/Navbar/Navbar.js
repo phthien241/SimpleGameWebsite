@@ -58,18 +58,20 @@ const Navbar = () => {
                   aria-orientation="vertical"
                   aria-labelledby="options-menu"
                 >
-                  <a
-                    onClick={()=>{
+                  <Link
+                    to="/"
+                    onClick={() => {
                       localStorage.removeItem("fname");
-                      localStorage.removeItem("email")
-                      localStorage.removeItem('lname')
+                      localStorage.removeItem("email");
+                      localStorage.removeItem("lname");
+                      localStorage.removeItem("bestScore");
                       setName("");
                     }}
                     className="font-semibold block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
                     role="menuitem"
                   >
                     LogOut
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
