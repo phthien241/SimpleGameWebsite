@@ -11,7 +11,7 @@ Game Craftery: Your go-to resource for game development and crafting. Unleash yo
 
 # TECH STACKS & LIBRARIES
 
-This project is built using Angular, Tailwind CSS, Node.js, MySQL and a combination of popular libraries and middlewares and other technologies:
+This project is built using ReactJS, Node.js, NoSQL (MongoDB) and a combination of popular libraries and middlewares and other technologies:
 - Express.js: Fast, unopinionated web application framework.
 - Mongoose: Elegant MongoDB object modeling for Node.js.
 - body-parser: Middleware to parse incoming request bodies.
