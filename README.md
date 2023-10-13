@@ -17,6 +17,7 @@ This project is built using Angular, Tailwind CSS, Node.js, MySQL and a combinat
 - body-parser: Middleware to parse incoming request bodies.
 - cors: Middleware to enable CORS with various options.
 - Tailwind CSS: Responsive front-end framework.
+- Phaser 3: Create games.
 
 
 # GETTNG STARTED
@@ -38,6 +39,7 @@ This project is built using Angular, Tailwind CSS, Node.js, MySQL and a combinat
 - run npm start
 
 # DEMO
-[](/images/screenshot1.png)
-[](/images/screenshot2.png)
-[](/images/screenshot3.png)
+![](/images/screenshot1.png)
+![](/images/screenshot2.png)
+![](/images/screenshot3.png)
+![](/images/screenshot4.png)
