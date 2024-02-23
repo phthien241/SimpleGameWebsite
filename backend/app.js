@@ -6,7 +6,7 @@ const userRoutes = require("./routes/user")
 const newfeedsRoutes = require("./routes/newfeeds")
 
 const app = express();
-mongoose.connect("mongodb+srv://kurrwin1:Thapdienmaiphuc241!@cluster0.uqwplwt.mongodb.net/game?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGODB_URL)
 .then(()=>console.log("Connect to database"))
 .catch((err)=>console.log(err));
 

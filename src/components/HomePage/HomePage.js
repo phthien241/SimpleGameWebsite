@@ -8,6 +8,7 @@ import match3puzzlle from "../../assets/images/match3puzzlle.jpg";
 import ava1 from "../../assets/images/ava1.jpg";
 import ava2 from "../../assets/images/ava2.jpg";
 import ava3 from "../../assets/images/ava3.jpg";
+import {Link} from 'react-router-dom';
 
 function HeroSection() {
   return (
@@ -22,9 +23,9 @@ function HeroSection() {
             <p className="sub-heading text-2xl font-semibold mb-10">
               Where Gamers Become Game Creators
             </p>
-            <button className="px-5 py-2.5 text-base bg-orange-500 hover:bg-orange-600 rounded transition-colors duration-300">
+            <Link to="/game-list" className="px-5 py-2.5 text-base bg-orange-500 hover:bg-orange-600 rounded transition-colors duration-300">
               Start Playing
-            </button>
+            </Link>
           </div>
         </div>
         <div className="intro py-20">
